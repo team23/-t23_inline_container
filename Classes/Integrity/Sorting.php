@@ -10,7 +10,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class Sorting extends \B13\Container\Integrity\Sorting
 {
-    public function runForSingleContainer($containerRecord, $cType)
+    public function runForSingleContainer($containerRecord, $cType): void
     {
         $columns = $this->tcaRegistry->getAvailableColumns($cType);
         $colPosByCType[$cType] = [];

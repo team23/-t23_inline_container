@@ -41,14 +41,14 @@ class DataHandler implements SingletonInterface
         }
     }
 
-    public function processCmdmap_preProcess($command, $table, $id, $value, $pObj, $pasteUpdate)
+    public function processCmdmap_preProcess($command, $table, $id, $value, $pObj, $pasteUpdate): void
     {
         if (in_array($command, ['copy', 'localize']) && $table === 'tt_content') {
             $GLOBALS['TCA']['tt_content']['columns']['tx_t23inlinecontainer_elements']['config']['type'] = 'none';
         }
     }
 
-    public function processCmdmap_postProcess($command, $table, $id, $value, $pObj, $pasteUpdate, $pasteDatamap)
+    public function processCmdmap_postProcess($command, $table, $id, $value, $pObj, $pasteUpdate, $pasteDatamap): void
     {
         if (in_array($command, ['copy', 'localize']) && $table === 'tt_content') {
             $GLOBALS['TCA']['tt_content']['columns']['tx_t23inlinecontainer_elements']['config']['type'] = 'tx_t23inlinecontainer_elements';
@@ -60,7 +60,7 @@ class DataHandler implements SingletonInterface
      * @param \TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler
      * @return void
      */
-    public function processDatamap_afterAllOperations(\TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler)
+    public function processDatamap_afterAllOperations(\TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler): void
     {
         // Make sure that container sorting is only update once per container element
         // => Only run sorting update after all operations have been finished

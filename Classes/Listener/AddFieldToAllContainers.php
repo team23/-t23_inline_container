@@ -16,7 +16,7 @@ use TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class AddFieldToAllContainers {
-    public function __invoke(AfterTcaCompilationEvent $event)
+    public function __invoke(AfterTcaCompilationEvent $event): void
     {
         $containerRegistry = GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class);
 

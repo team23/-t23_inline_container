@@ -15,17 +15,16 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'dreier@team23.de',
     'author_company' => 'TEAM23',
     'state' => 'beta',
-    'clearCacheOnLoad' => true,
-    'version' => '0.0.13',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.0.0-12.9.99',
-            'container' => '2.3.1-2.9.99',
+            'typo3' => '12.4.0-13.4.99',
+            'container' => '2.3.1-3.9.99',
         ],
         'conflicts' => [
         ],
         'suggests' => [
-            'news' => '9.0.0-10.9.9'
+            'news' => '9.0.0-12.9.9'
         ],
     ],
 ];
