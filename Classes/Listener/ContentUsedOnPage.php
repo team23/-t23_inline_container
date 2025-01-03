@@ -30,6 +30,11 @@ final class ContentUsedOnPage
                 foreach ($columns as $column) {
                     if ($column['colPos'] === (int)$record['colPos']) {
                         if ($record['sys_language_uid'] > 0 && $container->isConnectedMode()) {
+
+                            /*
+                            Prevents displaying of "Unused elements detected on this page" in the Page module in Backend when
+                            container element is translated in "Connected Mode"
+                            */
                             $used = ($container->hasChildInColPos((int)$record['colPos'], (int)$record['l18n_parent'])
                                 || $container->hasChildInColPos((int)$record['colPos'], (int)$record['uid']));
                             $event->setUsed($used);
