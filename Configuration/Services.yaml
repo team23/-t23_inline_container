@@ -16,3 +16,9 @@ services:
       - name: event.listener
         identifier: 'addFieldToAllContainers'
         event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
+
+  Team23\T23InlineContainer\Listener\ContentUsedOnPage:
+    tags:
+      - name: event.listener
+        identifier: 't23-inline-container-content-used-on-page'
+        after: 'tx-container-content-used-on-page'
